@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wordContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        #letters{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the word</h1>
+        <button onclick="startGame()" id="start">Start game</button>
+
+        <div id="wordContainer"></div>
+        <div id="letters"></div>
+    </div>
+
+    <script>
+        const words = [
+            "alma", "kutya", "ház", "számítógép", "toll", "asztal", "autó", "iskola", "kávé", "televízió",
+            "szék", "táska", "ajtó", "laptop", "szemüveg", "gyerek", "víz", "foci", "újság", "telefon",
+            "papír", "tészta", "térkép", "kert", "olvasás", "gyümölcs", "állat", "kép", "játék", "vers",
+            "épület", "étel", "számológép", "sör", "film", "zene", "könyv", "főzés", "futás", "horgászat",
+            "sport", "bicikli", "kerékpár", "torna", "tanulás", "ének", "színház", "fürdés", "alvás",
+            "sétálás", "mozgás", "úszás", "fagylalt", "pizza", "kenyér", "kutatás", "pénz", "utazás",
+            "kirándulás", "állomás", "busz", "vonat", "repülő", "strand", "park", "erdő", "hegy", "tó",
+            "folyó", "híd", "út", "ország", "város", "falucska", "szomszéd", "bolt", "piac", "étterem",
+            "kávézó", "mosoda", "gyógyszertár", "iskola", "óvoda", "egyetem", "színház", "mozi", "múzeum",
+            "állomás", "repülőtér", "buszpályaudvar", "kórház", "park", "szórakozóhely", "hotel", "lakás",
+            "ház", "kert", "udvar", "udvarház", "terasz", "társasház", "lakópark", "középület", "panelház"
+        ];
+
+        const abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz";
+
+        let szo;
+        let count;
+        function randNumber(min,max) {
+            return Math.round(Math.random()*(max-min))+min
+        }
+        function startGame() {
+            count = 0;
+            szo = Array.from(words[randNumber(0, words.length)])
+            console.log(szo, szo.length)
+            document.getElementById('wordContainer').innerHTML = ""; //ezek a boxok betűnként
+            for(let i = 0; i < szo.length; i++) {
+                document.getElementById('wordContainer').innerHTML+=`
+                <div class="betu" id="e${i}"
+                style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid blue;
+                padding: 10px;
+                font-size: 20px;
+                height: 50px;
+                width: 50px;
+                "
+                ></div>
+            `          
+            }
+
+        }
+            const abc2 = Array.from(abc)
+            abc2.forEach((item, index)=>{
+                document.getElementById('letters').innerHTML+=`
+                <div onclick="clickOnButton(this)" id="betuk"
+                style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid red;
+                    padding: 5px;
+                    font-size: 15px;
+                    height: 30px;
+                    width: 30px;
+                "
+                >${abc2[index]}</div>
+                `
+            })
+        
+        function clickOnButton(domObj) {
+            let char = domObj.innerHTML;
+           
+            console.log(char)
+            for(let i = 0; i < szo.length; i++) {
+                if(szo[i] == char) {
+                    document.getElementById("e" + i).innerHTML = char;
+                    console.log("OK")        
+                    count++
+                }
+            }
+            //console.log(count)
+            //console.log(szo.length)
+        }
+        
+    </script>
+</body>
+</html>
