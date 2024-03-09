@@ -1,0 +1,163 @@
+body{
+    /*background-image: url(https://i.ibb.co/n8fWqZf/letters.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;*/
+    background-color: black;
+}
+
+.container{
+    margin-top: 8%;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: #094e3b;
+    /*box-shadow: ;*/
+}
+
+#wordContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 2%;
+    /*flex-wrap: wrap;*/
+}
+
+@media only screen and (max-width: 500px) {
+    .boxesWord{
+        font-size: 5.3vw !important;
+        max-width: 21.5px !important;
+        max-height: 40px !important;
+        padding: 1vw !important;
+    }
+
+    h1{
+        font-size: 10vw !important;
+    }
+
+    .boxesLetters{
+        height: 45px !important;
+        width: 45px !important;
+    }
+
+    .container{
+        margin-top: 15%;
+    }
+}
+
+#letters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+
+.boxesWord{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #06ac77;
+    background-color: #57bf99;
+    padding: 10px;
+    font-size: 4vw;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #064e3b;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.boxesLetters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #06ac77;
+    background-color: #06ac77;
+    color: #79edc2;
+    padding: 5px;
+    font-size: 25px;
+    height: 55px;
+    width: 55px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.boxesLetters:hover{
+    background-color: #79edc2;
+    color: #06ac77;
+}
+
+
+button{
+    color: #79edc2;
+    font-size: 2vw;
+    padding: 20px;
+    width: 15vw;
+    background-color: #06ac77;
+    border-radius: 50px;
+    text-align: center;
+    border: 1px solid #06ac77;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 850px) {
+    button{
+        font-size: 3vw;
+        width: 17vw;
+    }
+    h1{
+        font-size: 10vw !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    button{
+        font-size: 4vw;
+        width: 25vw;
+    }
+
+    h1{
+        font-size: 10vw !important;
+    }
+}
+
+button:hover{
+    background-color: #34d399;
+    color: #0e644d;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    color: #79edc2;
+    font-size: 4vw;
+    letter-spacing: 5px;
+}
+
+#StartButton{
+    display: flex;
+    justify-content: center;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+.disabled:hover{
+    background-color: #06ac77;
+    color: #79edc2;
+    cursor: not-allowed;
+}
